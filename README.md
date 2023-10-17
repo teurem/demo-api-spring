@@ -28,4 +28,4 @@ author: Meuert Kachkynbaeva
         }
 ~~~
 [Ссылка на репозиторий](https://github.com/teurem/VKR-AutoServise/tree/master)  
-![JavaRush](javarush.png)
+![JavaRush](javarush.jpg)
