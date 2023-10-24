@@ -7,6 +7,8 @@ public class Users {
     private String adress;
     private int phoneNumber;
     private String email;
+    private String login;
+    private String password;
 
     public Users() {
     }
@@ -59,6 +61,22 @@ public class Users {
         this.email = email;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -68,19 +86,21 @@ public class Users {
                 ", adress='" + adress + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", email='" + email + '\'' +
+                ", login=" + login +
+                ", password='" + password + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Users)) return false;
         Users users = (Users) o;
-        return id == users.id && phoneNumber == users.phoneNumber && Objects.equals(name, users.name) && Objects.equals(surname, users.surname) && Objects.equals(adress, users.adress) && Objects.equals(email, users.email);
+        return getId() == users.getId() && getPhoneNumber() == users.getPhoneNumber() && Objects.equals(getName(), users.getName()) && Objects.equals(getSurname(), users.getSurname()) && Objects.equals(getAdress(), users.getAdress()) && Objects.equals(getEmail(), users.getEmail()) && Objects.equals(getLogin(), users.getLogin()) && Objects.equals(getPassword(), users.getPassword());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, adress, phoneNumber, email);
+        return Objects.hash(getId(), getName(), getSurname(), getAdress(), getPhoneNumber(), getEmail(), getLogin(), getPassword());
     }
 }
