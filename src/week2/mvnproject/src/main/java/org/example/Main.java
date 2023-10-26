@@ -1,10 +1,12 @@
 package org.example;
 
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Connection;
 
-public class Connection {
+
+public class Main {
     private static final String URL = "jdbc:postgresql://localhost:5432/CarsShop";
     private static final String login = "postgres";
     private static final String password = "pASSWORD123";
@@ -15,13 +17,13 @@ public class Connection {
             Class.forName("org.postgresql.Driver");
             System.out.println("Driver loaded sucsesful;");
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+           e.printStackTrace();
+       }
 
         Connection connection;
 
         try {
-            connection = DriverManager.getConnection(URL, login, password);
+            connection =  DriverManager.getConnection(URL, login, password);
 
             if (!connection.isClosed()) {
                 System.out.println("Correct connection to db!");
@@ -29,10 +31,12 @@ public class Connection {
 
             connection.close();
 
-            if (connection.isClosed()) {
+            if (connection.isClosed())
+            {
                 System.out.println("Connection closed: (");
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }
