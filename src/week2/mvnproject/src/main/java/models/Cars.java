@@ -9,10 +9,18 @@ public class Cars {
     private String model;
     private Date year;
     private double cost;
-    private double mileage; // пробег
     private String description;
 
     public Cars() {}
+
+    public Cars(int id, String brand, String model, Date year, double cost, String description) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.cost = cost;
+        this.description = description;
+    }
 
     public int getID()
     {
@@ -55,13 +63,6 @@ public class Cars {
         this.cost = cost;
     }
 
-    public double getMileage() {
-        return mileage;
-    }
-
-    public void setMileage(double mileage) {
-        this.mileage = mileage;
-    }
 
     public String getDescription() {
         return description;
@@ -79,7 +80,6 @@ public class Cars {
                 ", model='" + model + '\'' +
                 ", year=" + year +
                 ", cost=" + cost +
-                ", mileage=" + mileage +
                 ", description='" + description + '\'' +
                 '}';
     }
@@ -89,11 +89,11 @@ public class Cars {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cars cars = (Cars) o;
-        return id == cars.id && Double.compare(cost, cars.cost) == 0 && Double.compare(mileage, cars.mileage) == 0 && Objects.equals(brand, cars.brand) && Objects.equals(model, cars.model) && Objects.equals(year, cars.year) && Objects.equals(description, cars.description);
+        return id == cars.id && Double.compare(cost, cars.cost)  == 0 && Objects.equals(brand, cars.brand) && Objects.equals(model, cars.model) && Objects.equals(year, cars.year) && Objects.equals(description, cars.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, brand, model, year, cost, mileage, description);
+        return Objects.hash(id, brand, model, year, cost, description);
     }
 }
