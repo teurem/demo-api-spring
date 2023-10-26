@@ -1,3 +1,5 @@
+package models;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -71,7 +73,7 @@ public class Cars {
 
     @Override
     public String toString() {
-        return "Cars{" +
+        return "models.Cars{" +
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +

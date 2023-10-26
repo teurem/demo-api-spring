@@ -1,3 +1,5 @@
+package models;
+
 import java.util.Objects;
 
 public class Details {
@@ -52,7 +54,7 @@ public class Details {
 
     @Override
     public String toString() {
-        return "Details{" +
+        return "models.Details{" +
                 "id=" + id +
                 ", idCar=" + idCar +
                 ", idOrder=" + idOrder +

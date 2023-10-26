@@ -1,3 +1,5 @@
+package models;
+
 import java.util.Objects;
 
 public class Users {
@@ -79,7 +81,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "models.Users{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +

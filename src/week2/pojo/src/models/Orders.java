@@ -1,3 +1,5 @@
+package models;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -53,7 +55,7 @@ public class Orders {
 
     @Override
     public String toString() {
-        return "Orders{" +
+        return "models.Orders{" +
                 "id=" + id +
                 ", date=" + date +
                 ", summa=" + summa +
