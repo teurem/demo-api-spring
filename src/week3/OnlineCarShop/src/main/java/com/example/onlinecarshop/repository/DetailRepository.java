@@ -1,4 +1,7 @@
 package com.example.onlinecarshop.repository;
 
-public interface DetailRepository {
+import com.example.onlinecarshop.entity.DetailEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DetailRepository extends JpaRepository<DetailEntity, Long> {
 }

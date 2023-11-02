@@ -1,0 +1,56 @@
+1. Получить всех пользователей
+    Get запрос - http://localhost:8080/user
+    Вывод(JSON):    [
+                      {
+                          "id": 2,
+                          "name": "meruet",
+                          "password": "123",
+                          "city": "ALA"
+                      },
+                      {
+                          "id": 3,
+                          "name": "John Doefdf",
+                          "password": "myPassword",
+                          "city": "New York"
+                      },
+                      {
+                          "id": 4,
+                          "name": "Игорь",
+                          "password": "123",
+                          "city": "AKX"
+                      },
+                      {
+                          "id": 5,
+                          "name": "Алина",
+                          "password": "123456",
+                          "city": "Москва"
+                      }
+                  ]
+2. Удалить пользователя по id
+    Delete запрос - http://localhost:8080/user/4
+    Вывод: user deleted successfuly.
+
+3. Получить данные пользователя по id
+    Get запрос - http://localhost:8080/user/2
+    Вывод: {
+               "id": 2,
+               "name": "meruet",
+               "password": "123",
+               "city": "ALA"
+           }
+4. Добавить нового пользователя
+    Post запрос (raw, JSON) -  http://localhost:8080/user
+               {
+                   "name": "Valentin",
+                   "password": "123",
+                   "city": "ALA"
+               }
+    Вывод: user saved successfuly.
+5. Обновить данные пользователя по id
+    Put запрос - http://localhost:8080/user/5
+            {
+            "name": "Val",
+            "password": "1234",
+            "city": "GRE"
+            }
+    Вывод: user updated succeddfuly.
