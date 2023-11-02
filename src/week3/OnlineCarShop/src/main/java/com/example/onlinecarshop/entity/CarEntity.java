@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "cars", schema = "public")
-public class Cars {
+public class CarEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Cars {
     @Column
     private String description;
 
-    public Cars(Long id, String brand, String model, int year, int cost, String description) {
+    public CarEntity(Long id, String brand, String model, int year, int cost, String description) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -34,7 +34,7 @@ public class Cars {
         this.description = description;
     }
 
-    public Cars() {
+    public CarEntity() {
     }
 
     public Long getId() {
