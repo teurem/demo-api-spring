@@ -3,6 +3,7 @@ package com.example.onlinecarshop.controller;
 import com.example.onlinecarshop.entity.UserEntity;
 import com.example.onlinecarshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
