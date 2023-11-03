@@ -1,9 +1,13 @@
 package com.example.onlinecarshop.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GeneratorType;
 import org.hibernate.annotations.ValueGenerationType;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "details", schema = "public")
 public class DetailEntity {
@@ -23,17 +27,6 @@ public class DetailEntity {
 
     @Column
     private int price_for_one;
-
-    public DetailEntity(Long id, Long car_id, Long order_id, int amount, int price_for_one) {
-        this.id = id;
-        this.car_id = car_id;
-        this.order_id = order_id;
-        this.amount = amount;
-        this.price_for_one = price_for_one;
-    }
-
-    public DetailEntity() {
-    }
 
     public Long getId() {
         return id;

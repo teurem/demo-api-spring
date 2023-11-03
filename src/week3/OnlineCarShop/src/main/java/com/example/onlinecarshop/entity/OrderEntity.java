@@ -1,7 +1,11 @@
 package com.example.onlinecarshop.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "orders", schema = "public")
 public class OrderEntity {
@@ -20,17 +24,6 @@ public class OrderEntity {
 
     @Column
     private Long user_id;
-
-    public OrderEntity(Long id, int date, int sum, String status, Long user_id) {
-        this.id = id;
-        this.date = date;
-        this.sum = sum;
-        this.status = status;
-        this.user_id = user_id;
-    }
-
-    public OrderEntity() {
-    }
 
     public Long getId() {
         return id;

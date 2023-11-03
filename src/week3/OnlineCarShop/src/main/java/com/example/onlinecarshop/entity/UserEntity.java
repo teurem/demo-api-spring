@@ -1,7 +1,11 @@
 package com.example.onlinecarshop.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users", schema = "public")
 public class UserEntity {
@@ -18,16 +22,6 @@ public class UserEntity {
 
     @Column
     private String city;
-
-    public UserEntity(Long id, String name, String password, String city) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.city = city;
-    }
-
-    public UserEntity() {
-    }
 
     public Long getId() {
         return id;

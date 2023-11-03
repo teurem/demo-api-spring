@@ -1,7 +1,11 @@
 package com.example.onlinecarshop.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "cars", schema = "public")
 public class CarEntity {
@@ -24,18 +28,6 @@ public class CarEntity {
 
     @Column
     private String description;
-
-    public CarEntity(Long id, String brand, String model, int year, int cost, String description) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.year = year;
-        this.cost = cost;
-        this.description = description;
-    }
-
-    public CarEntity() {
-    }
 
     public Long getId() {
         return id;
