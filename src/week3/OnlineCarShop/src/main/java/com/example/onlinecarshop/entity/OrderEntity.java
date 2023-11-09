@@ -14,7 +14,7 @@ public class OrderEntity {
     private Long id;
 
     @Column
-    private int date;
+    private String dates;
 
     @Column
     private int sum;
@@ -33,12 +33,12 @@ public class OrderEntity {
         this.id = id;
     }
 
-    public int getDate() {
-        return date;
+    public String getDates() {
+        return dates;
     }
 
-    public void setDate(int date) {
-        this.date = date;
+    public void setDates(String dates) {
+        this.dates = dates;
     }
 
     public int getSum() {

@@ -1,5 +1,6 @@
 package com.example.onlinecarshop.controller;
 
+import com.example.onlinecarshop.dto.DetailDTO;
 import com.example.onlinecarshop.entity.DetailEntity;
 import com.example.onlinecarshop.service.DetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,8 @@ public class DetailController {
     private DetailService detailService;
 
     @GetMapping("/{detailId}")
-    public DetailEntity getDetailById(@PathVariable Long detailId) {
-        DetailEntity detail = detailService.getDetailById(detailId);
+    public DetailDTO getDetailById(@PathVariable Long detailId) {
+        DetailDTO detail = detailService.getDetailById(detailId);
         System.out.println("detailId: " +detailId+ "detail: " +detail);
         return detail;
     }

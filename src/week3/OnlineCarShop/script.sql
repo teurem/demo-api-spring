@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS public.details
 CREATE TABLE IF NOT EXISTS public.orders
 (
     id integer NOT NULL DEFAULT nextval('orders_id_seq'::regclass),
-    dates date NOT NULL,
+    dates varchar(50) NOT NULL,
     sum integer NOT NULL,
     status character varying(30) COLLATE pg_catalog."default" NOT NULL,
     user_id integer,

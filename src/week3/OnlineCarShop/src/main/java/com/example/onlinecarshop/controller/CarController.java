@@ -1,5 +1,6 @@
 package com.example.onlinecarshop.controller;
 
+import com.example.onlinecarshop.dto.CarDTO;
 import com.example.onlinecarshop.entity.CarEntity;
 import com.example.onlinecarshop.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,15 @@ public class CarController {
     private CarService carService;
 
     @GetMapping
-    public List<CarEntity> getAllCars() {
-        List<CarEntity> cars = carService.getAllCars();
+    public List<CarDTO> getAllCars() {
+        List<CarDTO> cars = carService.getAllCars();
         System.out.println("cars: " +cars);
         return cars;
     }
 
     @GetMapping("/{carId}")
-    public CarEntity getCarById(@PathVariable Long carId) {
-        CarEntity car = carService.getCarById(carId);
+    public CarDTO getCarById(@PathVariable Long carId) {
+        CarDTO car = carService.getCarById(carId);
         System.out.println("carId: " +carId+ "car: " +car);
         return car;
     }

@@ -5,8 +5,6 @@ import lombok.Data;
 
 @Data
 public class DetailDTO {
-
     private int amount;
-
     private int price_for_one;
 }

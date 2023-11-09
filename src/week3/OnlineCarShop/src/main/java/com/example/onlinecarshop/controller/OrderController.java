@@ -1,5 +1,6 @@
 package com.example.onlinecarshop.controller;
 
+import com.example.onlinecarshop.dto.OrderDTO;
 import com.example.onlinecarshop.entity.OrderEntity;
 import com.example.onlinecarshop.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,15 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    public List<OrderEntity> getAllOrders() {
-        List<OrderEntity> orders = orderService.getAllOrders();
+    public List<OrderDTO> getAllOrders() {
+        List<OrderDTO> orders = orderService.getAllOrders();
         System.out.println("orders: " + orders);
         return orders;
     }
 
     @GetMapping("/{orderId}")
-    public OrderEntity getOrderById(@PathVariable Long orderId) {
-        OrderEntity order = orderService.getOrderById(orderId);
+    public OrderDTO getOrderById(@PathVariable Long orderId) {
+        OrderDTO order = orderService.getOrderById(orderId);
         System.out.println("orderId: " +orderId+ "order: " + order);
         return order;
     }

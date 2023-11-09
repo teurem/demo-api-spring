@@ -1,5 +1,6 @@
 package com.example.onlinecarshop.service.impl;
 
+import com.example.onlinecarshop.dto.OrderDTO;
 import com.example.onlinecarshop.entity.OrderEntity;
 import com.example.onlinecarshop.repository.OrderRepository;
 import com.example.onlinecarshop.service.OrderService;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -15,20 +17,38 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    @Override
-    public List<OrderEntity> getAllOrders() {
-        return orderRepository.findAll();
+    private OrderDTO convertingEntityToDto(OrderEntity order) {
+        OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setDates(order.getDates());
+        orderDTO.setSum(order.getSum());
+        orderDTO.setStatus(order.getStatus());
+        return orderDTO;
     }
 
     @Override
-    public OrderEntity getOrderById(Long orderId) {
-        Optional<OrderEntity> orderOpt = orderRepository.findById(orderId);
-        if (orderOpt.isPresent()) {
-            return orderOpt.get();
-        } else {
-            throw new RuntimeException("order not found");
-        }
+    public List<OrderDTO> getAllOrders() {
+        return orderRepository.findAll()
+                .stream()
+                .map(this::convertingEntityToDto)
+                .collect(Collectors.toList());
     }
+
+    @Override
+    public OrderDTO getOrderById(Long orderId) {
+        return orderRepository.findById(orderId)
+                .map(this::convertingEntityToDto)
+                .orElseThrow(() -> new RuntimeException("order not found"));
+    }
+
+//    @Override
+//    public OrderEntity getOrderById(Long orderId) {
+//        Optional<OrderEntity> orderOpt = orderRepository.findById(orderId);
+//        if (orderOpt.isPresent()) {
+//            return orderOpt.get();
+//        } else {
+//            throw new RuntimeException("order not found");
+//        }
+//    }
 
     @Override
     public void saveOrder(OrderEntity order) {
