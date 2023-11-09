@@ -1,5 +1,6 @@
 package com.example.onlinecarshop.controller;
 
+import com.example.onlinecarshop.dto.UserDTO;
 import com.example.onlinecarshop.entity.UserEntity;
 import com.example.onlinecarshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +16,15 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<UserEntity> getAllUser() {
-        List<UserEntity> users = userService.getAllUser();
+    public List<UserDTO> getAllUser() {
+        List<UserDTO> users = userService.getAllUser();
         System.out.println("users: " +users);
         return users;
     }
 
     @GetMapping("/{userId}")
-    public UserEntity getUserById(@PathVariable Long userId) {
-        UserEntity user = userService.getUserById(userId);
+    public UserDTO getUserById(@PathVariable Long userId) {
+        UserDTO user = userService.getUserById(userId);
         System.out.println("userId: "+userId+" : user : "+user);
         return user;
     }
