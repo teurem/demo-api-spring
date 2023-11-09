@@ -1,7 +1,6 @@
 package com.example.onlinecarshop.controller;
 
 import com.example.onlinecarshop.entity.DetailEntity;
-import com.example.onlinecarshop.service.CarService;
 import com.example.onlinecarshop.service.DetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
