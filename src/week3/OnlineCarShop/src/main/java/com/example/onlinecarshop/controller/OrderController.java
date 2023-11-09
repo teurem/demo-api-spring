@@ -33,19 +33,19 @@ public class OrderController {
     public String saveOrder(@RequestBody OrderEntity order)
     {
         orderService.saveOrder(order);
-        return "order saved";
+        return "order saved successfuly";
     }
 
     @PutMapping("/{orderId}")
-    public String updateOrderStatus(@RequestBody OrderEntity order, Long orderId) {
+    public String updateOrderStatus(@RequestBody OrderEntity order, @PathVariable Long orderId) {
         orderService.updateOrderStatus(order, orderId);
-        return "order status update saccessfuly.";
+        return "order status update successfuly.";
     }
 
     @DeleteMapping("/{orderId}")
-    public String deleteOrder(@PathVariable Long orderid) {
-        orderService.deleteOrder(orderid);
-        return "order deleted saccessfuly.";
+    public String deleteOrder(@PathVariable Long orderId) {
+        orderService.deleteOrder(orderId);
+        return "order deleted successfuly.";
     }
 }
 
