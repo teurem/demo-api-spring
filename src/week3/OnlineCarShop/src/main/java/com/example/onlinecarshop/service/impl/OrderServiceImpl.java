@@ -33,7 +33,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void saveOrder(OrderEntity order) {
         OrderEntity orderDetail = orderRepository.save(order);
-        System.out.println("order saved to db with userId" + orderDetail.getId());
+        System.out.println("order saved to db with orderId" + orderDetail.getId());
     }
 
     @Override
