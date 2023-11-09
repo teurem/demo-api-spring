@@ -15,8 +15,7 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    public List<OrderEntity> getAllOrders()
-    {
+    public List<OrderEntity> getAllOrders() {
         List<OrderEntity> orders = orderService.getAllOrders();
         System.out.println("orders: " + orders);
         return orders;

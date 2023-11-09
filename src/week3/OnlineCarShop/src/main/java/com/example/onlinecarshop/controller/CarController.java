@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/{car}")
+@RequestMapping("/car")
 public class CarController {
 
     @Autowired
     private CarService carService;
 
     @GetMapping
-    public List<CarEntity> getAllcars() {
+    public List<CarEntity> getAllCars() {
         List<CarEntity> cars = carService.getAllCars();
         System.out.println("cars: " +cars);
         return cars;

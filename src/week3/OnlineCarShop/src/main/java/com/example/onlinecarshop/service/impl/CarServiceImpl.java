@@ -1,7 +1,6 @@
 package com.example.onlinecarshop.service.impl;
 
 import com.example.onlinecarshop.entity.CarEntity;
-import com.example.onlinecarshop.entity.OrderEntity;
 import com.example.onlinecarshop.repository.CarRepository;
 import com.example.onlinecarshop.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
