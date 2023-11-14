@@ -11,4 +11,5 @@ public interface UserService {
     void saveUser(UserEntity user);
     void updateUser(UserEntity user, Long userId);
     void deleteUserId(Long userId);
+    UserEntity registerUser(UserEntity user);
 }

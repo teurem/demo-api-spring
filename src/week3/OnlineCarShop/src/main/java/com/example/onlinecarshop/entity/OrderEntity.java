@@ -22,8 +22,9 @@ public class OrderEntity {
     @Column
     private String status;
 
-    @Column
-    private Long user_id;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserEntity user_id;
 
     public Long getId() {
         return id;
@@ -57,11 +58,11 @@ public class OrderEntity {
         this.status = status;
     }
 
-    public Long getUser_id() {
+    public UserEntity getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUser_id(UserEntity user_id) {
         this.user_id = user_id;
     }
 }

@@ -53,7 +53,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public void saveCar(CarEntity car) {
-       CarEntity carDetail = carRepository.save(car);
+        CarEntity carDetail = carRepository.save(car);
         System.out.println("car saved in db with carId: " +carDetail.getId());
     }
 

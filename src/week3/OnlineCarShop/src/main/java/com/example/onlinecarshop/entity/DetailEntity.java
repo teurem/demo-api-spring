@@ -16,11 +16,13 @@ public class DetailEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Long car_id;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "car_id", nullable = false)
+    private CarEntity car_id;
 
-    @Column
-    private Long order_id;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "order_id", nullable = false)
+    private OrderEntity order_id;
 
     @Column
     private int amount;
@@ -36,19 +38,19 @@ public class DetailEntity {
         this.id = id;
     }
 
-    public Long getCar_id() {
+    public CarEntity getCar_id() {
         return car_id;
     }
 
-    public void setCar_id(Long car_id) {
+    public void setCar_id(CarEntity car_id) {
         this.car_id = car_id;
     }
 
-    public Long getOrder_id() {
+    public OrderEntity getOrder_id() {
         return order_id;
     }
 
-    public void setOrder_id(Long order_id) {
+    public void setOrder_id(OrderEntity order_id) {
         this.order_id = order_id;
     }
 
