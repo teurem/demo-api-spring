@@ -14,15 +14,7 @@ public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private UserRole role;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column
+    private String name;
 }
 
